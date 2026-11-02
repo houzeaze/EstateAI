@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-multipart
+psycopg[binary]
+python-dotenv
+pandas
+openpyxl
+google-genai

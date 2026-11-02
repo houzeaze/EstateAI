@@ -1,0 +1,28 @@
+# Dependencies
+**/node_modules/
+**/.pnpm-store/
+
+# Python environments
+**/venv/
+**/.venv/
+
+# Environment variables
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Next.js
+**/.next/
+
+# Python cache
+**/__pycache__/
+*.pyc
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup
+backend_refactor.zip
