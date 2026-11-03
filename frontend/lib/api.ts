@@ -23,7 +23,7 @@ const API_BASE_URL = (
 
 // Ask questions about your business database
 export async function askAI(question: string): Promise<AIResponse> {
-  const response = await fetch(`{API_BASE_URL}/ask`, {
+  const response = await fetch(`${API_BASE_URL}/ask`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export async function askPDF(
   formData.append("file", file);
   formData.append("question", question);
 
-  const response = await fetch(`{API_BASE_URL}/ask-pdf`, {
+  const response = await fetch(`${API_BASE_URL}/ask-pdf`, {
     method: "POST",
     body: formData,
   });
