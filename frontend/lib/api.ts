@@ -17,9 +17,13 @@ export type PDFResponse = {
   chart_type: "bar" | "line" | "pie" | null;
 };
 
+const API_BASE_URL = (
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000"
+).replace(/\/$/, "");
+
 // Ask questions about your business database
 export async function askAI(question: string): Promise<AIResponse> {
-  const response = await fetch("http://127.0.0.1:8000/ask", {
+  const response = await fetch(`{API_BASE_URL}/ask`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -52,7 +56,7 @@ export async function askPDF(
   formData.append("file", file);
   formData.append("question", question);
 
-  const response = await fetch("http://127.0.0.1:8000/ask-pdf", {
+  const response = await fetch(`{API_BASE_URL}/ask-pdf`, {
     method: "POST",
     body: formData,
   });
